@@ -1,15 +1,18 @@
 import React from 'react';
 import { Award, GraduationCap, CheckCircle, ArrowRight, ShieldCheck } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 import { siteContent } from '../data/siteContent';
 import Button from '../components/common/Button';
 
 export default function About() {
-  const { about, qualifications } = siteContent;
+  const { language } = useLanguage();
+  const content = siteContent[language] || siteContent.en;
+  const { about, qualifications } = content;
 
   return (
     <section
       id="about"
-      aria-label="About the Practice"
+      aria-label={language === 'bn' ? 'আইনি পরিচিতি' : 'About the Practice'}
       className="py-12 sm:py-20 lg:py-24 bg-light-blue/30 border-y border-slate-100 scroll-mt-16"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

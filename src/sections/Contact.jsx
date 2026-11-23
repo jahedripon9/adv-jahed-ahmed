@@ -1,10 +1,13 @@
 import React from 'react';
 import { PhoneCall, Mail, MapPin, Clock, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 import { siteContent } from '../data/siteContent';
 import Button from '../components/common/Button';
 
 export default function Contact() {
-  const { contact } = siteContent;
+  const { language } = useLanguage();
+  const content = siteContent[language] || siteContent.en;
+  const { contact } = content;
 
   const hasRealPhone = Boolean(contact.phoneRaw && contact.phoneRaw.trim() !== '');
   const hasRealEmail = Boolean(contact.emailRaw && contact.emailRaw.trim() !== '');
@@ -12,7 +15,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      aria-label="Contact and Consultation"
+      aria-label={language === 'bn' ? 'যোগাযোগ ও সরাসরি পরামর্শ' : 'Contact and Consultation'}
       className="py-12 sm:py-20 lg:py-24 bg-white scroll-mt-16"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,7 +46,11 @@ export default function Contact() {
                 icon={PhoneCall}
                 iconPosition="left"
                 className="w-full sm:w-auto justify-center"
-                aria-label={hasRealPhone ? `Call our office directly at ${contact.phone}` : 'Call office directly'}
+                aria-label={
+                  hasRealPhone
+                    ? (language === 'bn' ? `সরাসরি ফোন করুন: ${contact.phone}` : `Call our office directly at ${contact.phone}`)
+                    : (language === 'bn' ? 'সরাসরি অফিসে ফোন করুন' : 'Call office directly')
+                }
               >
                 {contact.phoneButtonText}
               </Button>
@@ -59,7 +66,11 @@ export default function Contact() {
                 icon={Mail}
                 iconPosition="left"
                 className="w-full sm:w-auto justify-center"
-                aria-label={hasRealEmail ? `Send confidential email to ${contact.email}` : 'Send confidential inquiry email'}
+                aria-label={
+                  hasRealEmail
+                    ? (language === 'bn' ? `গোপনীয় ইমেইল পাঠান: ${contact.email}` : `Send confidential email to ${contact.email}`)
+                    : (language === 'bn' ? 'গোপনীয় অনুসন্ধানের ইমেইল পাঠান' : 'Send confidential inquiry email')
+                }
               >
                 {contact.emailButtonText}
               </Button>

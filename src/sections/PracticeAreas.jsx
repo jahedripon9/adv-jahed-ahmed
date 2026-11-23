@@ -1,5 +1,6 @@
 import React from 'react';
 import { Briefcase, Shield, FileText, Scale, ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 import { siteContent } from '../data/siteContent';
 import Button from '../components/common/Button';
 
@@ -12,12 +13,14 @@ const iconMap = {
 };
 
 export default function PracticeAreas() {
-  const { practiceAreas } = siteContent;
+  const { language } = useLanguage();
+  const content = siteContent[language] || siteContent.en;
+  const { practiceAreas } = content;
 
   return (
     <section
       id="practice-areas"
-      aria-label="Practice Areas"
+      aria-label={language === 'bn' ? 'আইনি সেবাসমূহ' : 'Practice Areas'}
       className="py-12 sm:py-20 lg:py-24 bg-white scroll-mt-16"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -98,9 +101,9 @@ export default function PracticeAreas() {
                       <a
                         href="#contact"
                         className="inline-flex items-center gap-1.5 text-xs font-semibold text-navy-primary hover:text-accent-teal transition-colors pt-3.5 border-t border-slate-100 group/link min-h-[44px]"
-                        aria-label={`Inquire about ${area.title}`}
+                        aria-label={`${practiceAreas.itemInquireText || 'Inquire regarding this area'}: ${area.title}`}
                       >
-                        <span>Inquire regarding this area</span>
+                        <span>{practiceAreas.itemInquireText || 'Inquire regarding this area'}</span>
                         <ArrowUpRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5" aria-hidden="true" />
                       </a>
                     </article>

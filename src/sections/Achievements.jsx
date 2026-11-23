@@ -1,14 +1,17 @@
 import React from 'react';
 import { Award } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 import { siteContent } from '../data/siteContent';
 
 export default function Achievements() {
-  const { achievements } = siteContent;
+  const { language } = useLanguage();
+  const content = siteContent[language] || siteContent.en;
+  const { achievements } = content;
 
   return (
     <section
       id="achievements"
-      aria-label="Achievements and Track Record"
+      aria-label={language === 'bn' ? 'সাফল্যের খতিয়ান ও মাইলফলক' : 'Achievements and Track Record'}
       className="relative py-14 sm:py-20 lg:py-24 bg-navy-secondary text-white overflow-hidden scroll-mt-16"
     >
       {/* Decorative subtle contour lines SVG background */}

@@ -1,9 +1,12 @@
 import React from 'react';
 import { Scale, Phone, Mail, MapPin } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 import { siteContent } from '../data/siteContent';
 
 export default function Footer() {
-  const { lawyer, navigation, practiceAreas, contact, footer, socialLinks } = siteContent;
+  const { language } = useLanguage();
+  const content = siteContent[language] || siteContent.en;
+  const { lawyer, navigation, practiceAreas, contact, footer, socialLinks } = content;
 
   const hasRealPhone = Boolean(contact.phoneRaw && contact.phoneRaw.trim() !== '');
   const hasRealEmail = Boolean(contact.emailRaw && contact.emailRaw.trim() !== '');
@@ -11,7 +14,7 @@ export default function Footer() {
   return (
     <footer
       role="contentinfo"
-      aria-label="Site Footer"
+      aria-label={language === 'bn' ? 'ফুটার' : 'Site Footer'}
       className="bg-navy-secondary text-white pt-12 sm:pt-16 pb-10 sm:pb-12 border-t border-navy-dark overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -46,7 +49,7 @@ export default function Footer() {
           </div>
 
           {/* Column 2: Quick Navigation (2 cols on desktop) */}
-          <nav className="lg:col-span-2" aria-label="Footer Quick Links">
+          <nav className="lg:col-span-2" aria-label={footer.quickLinksTitle}>
             <h3 className="font-serif font-bold text-sm uppercase tracking-wider text-white mb-3 sm:mb-4">
               {footer.quickLinksTitle}
             </h3>
@@ -65,7 +68,7 @@ export default function Footer() {
           </nav>
 
           {/* Column 3: Practice Areas (3 cols on desktop) */}
-          <nav className="lg:col-span-3" aria-label="Footer Practice Area Links">
+          <nav className="lg:col-span-3" aria-label={footer.practiceAreasTitle}>
             <h3 className="font-serif font-bold text-sm uppercase tracking-wider text-white mb-3 sm:mb-4">
               {footer.practiceAreasTitle}
             </h3>

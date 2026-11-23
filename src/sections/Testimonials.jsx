@@ -1,14 +1,17 @@
 import React from 'react';
 import { MessageSquareQuote, UserCheck } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 import { siteContent } from '../data/siteContent';
 
 export default function Testimonials() {
-  const { testimonials } = siteContent;
+  const { language } = useLanguage();
+  const content = siteContent[language] || siteContent.en;
+  const { testimonials } = content;
 
   return (
     <section
       id="testimonials"
-      aria-label="Client Testimonials"
+      aria-label={language === 'bn' ? 'সেবাগ্রহণকারীদের অভিমত' : 'Client Testimonials'}
       className="py-14 sm:py-20 lg:py-24 bg-light-blue/20 relative overflow-hidden scroll-mt-16 border-b border-slate-100"
     >
       {/* Decorative subtle background quotation mark watermark */}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, ShieldCheck, Award, Scale, CheckCircle2 } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
 import { siteContent } from '../data/siteContent';
 import Button from '../components/common/Button';
 
@@ -11,7 +12,9 @@ const trustIconMap = {
 };
 
 export default function Hero() {
-  const { lawyer, hero } = siteContent;
+  const { language } = useLanguage();
+  const content = siteContent[language] || siteContent.en;
+  const { lawyer, hero } = content;
 
   return (
     <section
@@ -28,7 +31,7 @@ export default function Hero() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-start">
           
           {/* Left Column: Value Proposition & CTAs */}
-          <div className="lg:col-span-7 flex flex-col items-start order-1 pt-1">
+          <div className="lg:col-span-7 flex flex-col items-start order-2 lg:order-1 pt-2 sm:pt-4 lg:pt-1">
             
             {/* Status Pill Badge */}
             <div className="inline-flex items-center gap-2 p-1 pr-3 sm:pr-4 rounded-full bg-light-blue text-navy-primary text-xs font-medium mb-3 sm:mb-4 border border-slate-200/60 shadow-xs max-w-full">
@@ -106,7 +109,7 @@ export default function Hero() {
           </div>
 
           {/* Right Column: Layered Lawyer Portrait & Floating Nameplate Card */}
-          <div className="lg:col-span-5 flex justify-center lg:justify-end relative order-2 pb-8 sm:pb-10 lg:pb-0">
+          <div className="lg:col-span-5 flex justify-center lg:justify-end relative order-1 lg:order-2 pb-8 sm:pb-10 lg:pb-0">
             <div className="relative w-full max-w-[280px] xs:max-w-xs sm:max-w-md lg:max-w-none">
               
               {/* Circular Soft Blue Backdrop Graphic */}
