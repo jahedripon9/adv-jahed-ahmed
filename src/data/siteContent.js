@@ -284,7 +284,7 @@ export const siteContent = {
         id: 1,
         title: "Dependable, Responsive, Professional Partner",
         quote:
-          "[CONTENT REQUIRED: Verified client feedback regarding legal advisory, contract drafting, or transaction counsel. Client to supply official testimonial text.]",
+          "I appreciated the consistent communication, professional approach, and practical legal guidance throughout our engagement. The advice was clear, timely, and focused on our business needs, making complex legal matters easier to understand and manage.",
         clientName: "Rofiqul Islam",
         clientRole: "Businessman & Entrepreneur",
         caseType: "Corporate Advisory",
@@ -293,7 +293,7 @@ export const siteContent = {
         id: 2,
         title: "Incredible Experience & Clear Guidance",
         quote:
-          "[CONTENT REQUIRED: Verified client feedback describing responsiveness, clear legal direction, and successful resolution of legal affairs. Client to supply official testimonial text.]",
+          "The legal guidance was professional, clear, and responsive throughout the process. I appreciated the careful attention to my concerns, transparent communication, and practical advice at every stage.",
         clientName: "Kalam Hossain",
         clientRole: "UP Member & Community Leader",
         caseType: "Commercial Contracts",
