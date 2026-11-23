@@ -173,12 +173,12 @@ export const siteContent = {
       },
       {
         title: "Bar Admission & License",
-        institution: "[CONTENT REQUIRED: State / National Bar Authority]",
+        institution: "Sylhet Bar Association, Bangladesh",
         status: "Active & in Good Standing",
       },
       {
         title: "Specialized Legal Accreditation",
-        institution: "[CONTENT REQUIRED: Legal Institute / Association]",
+        institution: "Sylhet Bar Association, Bangladesh",
         status: "Corporate & Regulatory Certification",
       },
     ],
@@ -346,7 +346,7 @@ export const siteContent = {
     contactInfoTitle: "Direct Office Contact",
     disclaimer:
       "Attorney Advertising & Legal Notice: The information on this static website is provided for general informational purposes only and does not constitute formal legal advice. Viewing this website or communicating with our office via telephone, email, or internet messaging does not create an attorney-client relationship. An attorney-client relationship is strictly formed upon the mutual execution of a formal, written representation agreement.",
-    copyrightNotice: `© ${new Date().getFullYear()} [CONTENT REQUIRED: Lawyer Name]. All rights reserved.`,
+    copyrightNotice: `© ${new Date().getFullYear()} ADV JAHED AHMED. All rights reserved.`,
     legalLinks: [
       { name: "Privacy Policy", href: "#about" },
       { name: "Terms of Representation", href: "#contact" },
