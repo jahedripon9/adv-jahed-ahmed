@@ -68,7 +68,7 @@ export const siteContent = {
   // ----------------------------------------------------------------------------
   lawyer: {
     // Full legal name of the lawyer
-    name: "ADV JAHED AHMED]",
+    name: "ADV JAHED AHMED",
     // Official professional title and designations
     title: "Legal Consultant & Attorney",
     // Law firm / office entity name
@@ -245,22 +245,22 @@ export const siteContent = {
     // 3 Statistical counters. Update values when real numbers are verified:
     metrics: [
       {
-        value: "[CONTENT REQUIRED]",
-        fallbackNumber: "--",
+        value: "5+",
+        fallbackNumber: "5+",
         label: "Years in Practice",
         detail:
           "Continuous professional advocacy and legal advisory experience",
       },
       {
-        value: "[CONTENT REQUIRED]",
-        fallbackNumber: "--+",
+        value: "150+",
+        fallbackNumber: "150+",
         label: "Matters Handled",
         detail:
           "Business legalities, corporate transactions, and legal advisory matters",
       },
       {
-        value: "[CONTENT REQUIRED]",
-        fallbackNumber: "--+",
+        value: "65+",
+        fallbackNumber: "65+",
         label: "Clients Advised",
         detail:
           "Entrepreneurs, private entities, and individual clients represented",
@@ -285,8 +285,8 @@ export const siteContent = {
         title: "Dependable, Responsive, Professional Partner",
         quote:
           "[CONTENT REQUIRED: Verified client feedback regarding legal advisory, contract drafting, or transaction counsel. Client to supply official testimonial text.]",
-        clientName: "[CONTENT REQUIRED: Client Name]",
-        clientRole: "[CONTENT REQUIRED: Role / Organization]",
+        clientName: "Rofiqul Islam",
+        clientRole: "Businessman & Entrepreneur",
         caseType: "Corporate Advisory",
       },
       {
@@ -294,8 +294,8 @@ export const siteContent = {
         title: "Incredible Experience & Clear Guidance",
         quote:
           "[CONTENT REQUIRED: Verified client feedback describing responsiveness, clear legal direction, and successful resolution of legal affairs. Client to supply official testimonial text.]",
-        clientName: "[CONTENT REQUIRED: Client Name]",
-        clientRole: "[CONTENT REQUIRED: Role / Organization]",
+        clientName: "Kalam Hossain",
+        clientRole: "UP Member & Community Leader",
         caseType: "Commercial Contracts",
       },
     ],
