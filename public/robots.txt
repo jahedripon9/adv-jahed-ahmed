@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap Index (Uncomment and set your production domain upon deployment)
+# Sitemap: https://yourdomain.com/sitemap.xml
